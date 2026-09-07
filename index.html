@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANAGRAMdle</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="help-btn" class="icon-btn" aria-label="How to play">?</button>
+    <h1>ANAGRAM<span>dle</span></h1>
+    <button id="stats-btn" class="icon-btn" aria-label="Statistics">📊</button>
+  </header>
+
+  <main>
+    <div id="puzzle-meta">
+      <span id="category-badge" class="badge"></span>
+      <span id="puzzle-number"></span>
+    </div>
+
+    <div id="acronym-display"></div>
+
+    <div id="word-count-hint"></div>
+
+    <div id="board"></div>
+
+    <form id="guess-form" autocomplete="off">
+      <input id="guess-input" type="text" placeholder="Type the full name…" aria-label="Your guess" />
+      <button type="submit" id="submit-btn">Guess</button>
+    </form>
+
+    <button id="hint-btn" class="text-btn">Reveal a hint</button>
+    <p id="hint-text"></p>
+
+    <div id="message" role="status" aria-live="polite"></div>
+  </main>
+
+  <!-- How to play modal -->
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" data-close="help-modal">×</button>
+      <h2>How to play</h2>
+      <p>Every day there's a new acronym. Guess the phrase it stands for.</p>
+      <ul>
+        <li>Each word of your guess is checked against the answer.</li>
+        <li><span class="tile demo correct">Green</span> — correct word, correct spot.</li>
+        <li><span class="tile demo present">Yellow</span> — that word appears elsewhere in the answer.</li>
+        <li><span class="tile demo absent">Grey</span> — that word isn't in the answer.</li>
+      </ul>
+      <p>You get 6 guesses. The word count is shown above the board — short connector words like "of" and "and" don't map to a letter, so it won't always match the acronym's length. A new puzzle drops every day at midnight.</p>
+    </div>
+  </div>
+
+  <!-- Stats modal -->
+  <div id="stats-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" data-close="stats-modal">×</button>
+      <h2>Statistics</h2>
+      <div class="stats-grid">
+        <div><span id="stat-played">0</span><label>Played</label></div>
+        <div><span id="stat-winpct">0</span><label>Win %</label></div>
+        <div><span id="stat-streak">0</span><label>Streak</label></div>
+        <div><span id="stat-maxstreak">0</span><label>Max Streak</label></div>
+      </div>
+      <h3>Guess Distribution</h3>
+      <div id="guess-distribution"></div>
+      <div id="share-section" class="hidden">
+        <div id="countdown"></div>
+        <button id="share-btn" class="text-btn">Share Result</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/game.js"></script>
+</body>
+</html>
