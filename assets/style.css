@@ -63,6 +63,15 @@ body {
   background: var(--surface);
 }
 
+.topbar-right {
+  display: flex;
+  gap: 4px;
+}
+
+.icon-btn.signed-in {
+  box-shadow: 0 0 0 2px var(--accent) inset;
+}
+
 main {
   max-width: 500px;
   margin: 0 auto;
@@ -263,6 +272,43 @@ main {
   text-align: center;
   color: var(--muted);
   margin-top: 12px;
+}
+
+#signin-form {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+#signin-email {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--fg);
+}
+
+#signin-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#signin-message {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-height: 1.2em;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .hidden { display: none !important; }

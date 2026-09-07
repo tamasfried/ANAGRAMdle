@@ -10,7 +10,10 @@
   <header class="topbar">
     <button id="help-btn" class="icon-btn" aria-label="How to play">?</button>
     <h1>ANAGRAM<span>dle</span></h1>
-    <button id="stats-btn" class="icon-btn" aria-label="Statistics">📊</button>
+    <div class="topbar-right">
+      <button id="account-btn" class="icon-btn" aria-label="Account">👤</button>
+      <button id="stats-btn" class="icon-btn" aria-label="Statistics">📊</button>
+    </div>
   </header>
 
   <main>
@@ -52,6 +55,29 @@
     </div>
   </div>
 
+  <!-- Account modal -->
+  <div id="account-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" data-close="account-modal">×</button>
+      <h2>Account</h2>
+
+      <div id="account-signed-out">
+        <p>Sign in with your email to sync your progress and streaks across devices. No password needed — we'll email you a magic link.</p>
+        <form id="signin-form">
+          <input id="signin-email" type="email" placeholder="you@example.com" required aria-label="Email address" />
+          <button type="submit" id="signin-btn">Send magic link</button>
+        </form>
+        <p id="signin-message" role="status" aria-live="polite"></p>
+      </div>
+
+      <div id="account-signed-in" class="hidden">
+        <p>Signed in as <strong id="account-email"></strong></p>
+        <p class="muted">Your progress and stats now sync automatically.</p>
+        <button id="signout-btn" class="text-btn">Sign out</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Stats modal -->
   <div id="stats-modal" class="modal hidden">
     <div class="modal-content">
@@ -72,6 +98,8 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="assets/config.js"></script>
   <script src="assets/game.js"></script>
 </body>
 </html>
