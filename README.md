@@ -44,6 +44,12 @@ No build step. Serve the folder with any static file server (fetch requires http
 python3 -m http.server 8000
 ```
 
+On Windows, the launcher is usually just `python` (or `py`) rather than `python3`:
+
+```
+python -m http.server 8000
+```
+
 Then open `http://localhost:8000`.
 
 ## Deploying
